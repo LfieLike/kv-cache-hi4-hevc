@@ -1,0 +1,28 @@
+{
+  "format": "qwen35-infinitebench-query-sensitive-klt-fp4-v1",
+  "recorded": "2026-08-23",
+  "dataset": "InfiniteBench Split-B",
+  "cache": "key",
+  "quantizer": "fp4-e2m1",
+  "scale_granularity": "block-layer",
+  "scale_multiplier": 1.0,
+  "codec": "lossless x265 GOP-32 gray8, exact bitstream + scale metadata",
+  "alignment": "/data0/work/qwen35-best-h265-fp4-results/gop-scale-from-book/key/alignment/cross_layer_rotations.safetensors",
+  "fit": "/data0/work/qwen35-best-h265-fp4-results/infinitebench-query-sensitive-klt/fit",
+  "eval": "/data0/work/qwen35-best-h265-fp4-results/infinitebench-query-sensitive-klt-fp4/eval-split-b",
+  "compare": "/data0/work/qwen35-best-h265-fp4-results/infinitebench-query-sensitive-klt-fp4/compare.json",
+  "warning": "Do not mix with official RULER FP4 2.953 / 2.069 / 1.693. Same A and V_r as the INT8 book table; do not overwrite that INT8 tree.",
+  "arms": [
+    {"label": "unrotated", "bpv": 2.978, "qk_nrmse": 0.12689, "vs_unrot": null, "vs_A": null},
+    {"label": "A", "bpv": 2.663, "qk_nrmse": 0.11796, "vs_unrot": 0.106, "vs_A": null},
+    {"label": "qs_r0", "bpv": 2.472, "qk_nrmse": 0.14087, "vs_unrot": 0.170, "vs_A": 0.072},
+    {"label": "qs_r32", "bpv": 2.590, "qk_nrmse": 0.12471, "vs_unrot": 0.130, "vs_A": 0.027},
+    {"label": "qs_r64", "bpv": 2.649, "qk_nrmse": 0.11865, "vs_unrot": 0.111, "vs_A": 0.005},
+    {"label": "qs_r128", "bpv": 2.702, "qk_nrmse": 0.11398, "vs_unrot": 0.093, "vs_A": -0.015},
+    {"label": "qs_r192", "bpv": 2.739, "qk_nrmse": 0.11058, "vs_unrot": 0.080, "vs_A": -0.029},
+    {"label": "qs_r256", "bpv": 2.663, "qk_nrmse": 0.11796, "vs_unrot": 0.106, "vs_A": 0.0}
+  ],
+  "checks": {
+    "qs_r256_equals_A": true
+  }
+}
